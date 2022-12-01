@@ -24,7 +24,6 @@ const Use = ({ resultFromApi }) => {
             </div>
             <div className="user-profile-picture">
               <h2> {NewFilteredArray?.name.last.slice(0, 1).toUpperCase()}</h2>
-              {/* <img src={NewFilteredArray.picture.large} alt="dp" /> */}
             </div>
           </div>
           <div className="user-title-text">

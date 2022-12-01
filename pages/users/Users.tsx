@@ -3,13 +3,12 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Pagination from './pagination';
 
-
 const Users = ({ resultFromApi }) => {
   const [postPerPage] = useState(10);
   const [currentPage, setcurrentPage] = useState(1);
 
-  const indexOfLastPage = postPerPage * currentPage; 
-  const indexOfFirstPage = indexOfLastPage - postPerPage; 
+  const indexOfLastPage = postPerPage * currentPage;
+  const indexOfFirstPage = indexOfLastPage - postPerPage;
   const ModifiedUserst = resultFromApi?.slice(
     indexOfFirstPage,
     indexOfLastPage
@@ -17,11 +16,12 @@ const Users = ({ resultFromApi }) => {
 
   return (
     <div className="container-controls">
+      <Link to="/">
+        <button className="link-button">Home page</button>
+      </Link>
+
       {ModifiedUserst.length !== 0 ? (
         <div>
-          <div className="user-title-text">
-            <h2>List of all our employees</h2>
-          </div>
           <div style={{ margin: '0 1em' }}>
             {ModifiedUserst.map((data, index) => {
               return (
@@ -49,9 +49,9 @@ const Users = ({ resultFromApi }) => {
           </div>
           <Pagination
             currentPage={currentPage}
-            resultFromApi={resultFromApi} 
-            setcurrentPage={setcurrentPage} 
-            postPerPage={postPerPage} 
+            resultFromApi={resultFromApi}
+            setcurrentPage={setcurrentPage}
+            postPerPage={postPerPage}
           />
           <br />
           <br />

@@ -1,6 +1,7 @@
 .home-page-container {
   width: 100%;
-  background-color: #f44336;
+  height: 100%;
+  background-color: #d8f436;
   height: 100vh !important;
   max-height: 90vh !important;
   color: #fff !important;
